@@ -7,6 +7,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.server.PluginDisableEvent;
 import org.bukkit.event.server.PluginEnableEvent;
 import org.bukkit.plugin.Plugin;
@@ -84,5 +85,11 @@ class EventsListener implements Listener
 
         if (!rpgHuds.needsIaZip)
             rpgHuds.initPlayer(e.getPlayer());
+    }
+
+    @EventHandler
+    private void onQuit(PlayerQuitEvent e)
+    {
+        rpgHuds.removePlayer(e.getPlayer());
     }
 }

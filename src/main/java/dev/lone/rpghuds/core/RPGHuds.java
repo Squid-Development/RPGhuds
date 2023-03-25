@@ -217,6 +217,16 @@ public class RPGHuds
         }
     }
 
+    void removePlayer(Player player)
+    {
+        PlayerData data = datasByPlayer.get(player);
+        if(data != null)
+        {
+            datas.remove(data);
+            datasByPlayer.remove(player);
+        }
+    }
+
     //TODO: implement animated icons.
     // Warning: make sure to increment the refresh rate only when it's actually needed by the animation.
     // I don't want the plugin to become heavy just for a stupid animation.

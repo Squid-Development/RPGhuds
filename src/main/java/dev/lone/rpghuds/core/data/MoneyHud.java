@@ -55,7 +55,7 @@ public class MoneyHud extends PAPIHud<MoneySettings>
             return RenderAction.HIDDEN;
         }
 
-        if(Main.econ != null)
+        /*if(Main.econ != null)
         {
             double balance = Main.econ.getBalance(player);
             if(balance != prevBalance)
@@ -76,7 +76,7 @@ public class MoneyHud extends PAPIHud<MoneySettings>
                     refreshRender(true);
                 }, 20 * 3);
             }
-        }
+        }*/
 
         //TODO: better abstract logic: HudDataProvider ???
         String amount = PlaceholderAPI.setPlaceholders(holder.getPlayer(), placeholder);
